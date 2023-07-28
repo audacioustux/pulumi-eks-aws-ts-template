@@ -1,0 +1,16 @@
+{
+    "name": "ddd",
+    "main": "build/main.js",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "@types/node": "^20",
+        "typescript": "next"
+    },
+    "dependencies": {
+        "@pulumi/pulumi": "^3"
+    }
+}
