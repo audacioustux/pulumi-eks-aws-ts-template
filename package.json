@@ -1,5 +1,5 @@
 {
-    "name": "ddd",
+    "name": "${PROJECT}",
     "main": "build/main.js",
     "type": "module",
     "private": true,
