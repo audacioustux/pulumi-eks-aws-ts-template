@@ -1,0 +1,52 @@
+{
+  "name": "Dev Container - audacioustux-eks-aws",
+  "dockerComposeFile": "compose.yml",
+  "service": "audacioustux-eks-aws",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "mutantdino.resourcemonitor",
+        "Gruntfuggly.todo-tree",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ],
+      "settings": {
+        "git.autofetch": true,
+        "files.autoSave": "onFocusChange",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "resmon.show.cpufreq": false,
+        "[typescript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        }
+      }
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "configureZshAsDefaultShell": true,
+      "username": "vscode"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    },
+    "ghcr.io/devcontainers/features/rust:1": {
+      "profile": "default"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "dockerDashComposeVersion": "v2"
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/aws-cli:1": {},
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
+    "ghcr.io/audacioustux/devcontainers/common-utils-extras": {},
+    "ghcr.io/audacioustux/devcontainers/pulumi": {},
+    "ghcr.io/audacioustux/devcontainers/k9s": {},
+    "ghcr.io/audacioustux/devcontainers/cilium": {},
+    "ghcr.io/audacioustux/devcontainers/taskfile": {},
+    "ghcr.io/audacioustux/devcontainers/argo:1": {}
+  },
+  "updateContentCommand": "git clean -Xdf --exclude='!**/*.env'"
+}

@@ -1,0 +1,26 @@
+version: '3'
+
+dotenv: [".env"]
+
+tasks:
+  pulumi:org:set-default:
+    cmds:
+      - echo "Setting default Pulumi organization to - $PULUMI_DEFAULT_ORG"
+      - pulumi org set-default $PULUMI_DEFAULT_ORG
+
+  deps:
+    deps: 
+      - pulumi:org:set-default
+    cmd: pulumi install
+
+  format:
+    deps: [deps]
+    cmd: pnpm run format
+
+  up:
+    deps: [deps]
+    env:
+      PULUMI_K8S_ENABLE_SERVER_SIDE_APPLY: true
+      PULUMI_K8S_CLIENT_TIMEOUT: 90
+    cmd: pulumi up {{.CLI_ARGS}}
+
