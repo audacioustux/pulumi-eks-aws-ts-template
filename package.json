@@ -1,5 +1,5 @@
 {
-  "name": "sdp-aws",
+  "name": "${PROJECT}",
   "exports": "./index.ts",
   "type": "module",
   "engines": {
