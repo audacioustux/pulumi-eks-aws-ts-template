@@ -22,3 +22,16 @@ registerAutoTags({
 const nm = (name: string) => `${project}-${stack}-${name}`
 const nmo = (name: string) => `${nm(name)}-${organization}`
 
+// create a s3 bucket for testing purpose
+const bucket = nmo(`test`)
+new aws.s3.Bucket(bucket, {
+  bucket,
+  acl: 'private',
+  serverSideEncryptionConfiguration: {
+    rule: {
+      applyServerSideEncryptionByDefault: {
+        sseAlgorithm: 'AES256',
+      },
+    },
+  },
+})
